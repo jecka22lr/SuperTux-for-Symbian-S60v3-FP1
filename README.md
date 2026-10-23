@@ -1,7 +1,13 @@
 # SuperTux 0.1.3 for Symbian S60v3 and S60v3 FP1 (Symbian 9.1+)
 A port of SuperTux 0.1.3 for Symbian 9.1 and later devices. 240p. Not my own work - only modified it so I could use the dependencies I could not match for the original port to build it. AI ASSISTED - Claude assisted many of the changes in this port to make it work.
 
-# What changed?
+# Benchmarks?
+Solid stable 33fps on Nokia N93 on the first level.
+
+<img width="4000" height="3000" alt="yes(1)" src="https://github.com/user-attachments/assets/25731ebd-904b-4868-82b1-cff0912d83f3" />
+
+
+# What changed between the original port and this?
 Dependencies and libraries:
 
 instead of PIPS 1.3, OpenC (a more modern implementation).
