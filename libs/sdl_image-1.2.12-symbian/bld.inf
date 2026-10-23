@@ -1,0 +1,8 @@
+PRJ_PLATFORMS
+ARMV5 GCCE
+
+PRJ_EXPORTS
+..\SDL_image.h \epoc32\include\esdl\SDL_image.h
+
+PRJ_MMPFILES
+sdl_image.mmp

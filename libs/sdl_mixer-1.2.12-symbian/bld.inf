@@ -1,0 +1,8 @@
+PRJ_PLATFORMS
+ARMV5 GCCE
+
+PRJ_EXPORTS
+..\SDL_mixer.h \epoc32\include\esdl\SDL_mixer.h
+
+PRJ_MMPFILES
+sdl_mixer.mmp

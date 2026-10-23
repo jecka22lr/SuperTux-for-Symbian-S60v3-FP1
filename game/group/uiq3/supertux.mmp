@@ -1,0 +1,65 @@
+target supertux.exe
+targettype exe
+targetpath \sys\bin
+
+systeminclude \epoc32\include \epoc32\include\stdapis \epoc32\include\stlport \epoc32\include\esdl   \epoc32\include\libc
+userinclude ..\..\src
+sourcepath ..\..\src
+source badguy.cpp              bitmask.cpp             button.cpp              collision.cpp           configfile.cpp
+source gameloop.cpp            gameobjs.cpp            globals.cpp             high_scores.cpp         intro.cpp
+source level.cpp               lispreader.cpp          menu.cpp                mousecursor.cpp
+source musicref.cpp            music_manager.cpp       particlesystem.cpp      physic.cpp              player.cpp
+source resources.cpp           scene.cpp               screen.cpp              setup.cpp               sound.cpp
+source special.cpp             sprite.cpp              sprite_manager.cpp      supertux.cpp            text.cpp
+source texture.cpp             tile.cpp                timer.cpp               title.cpp               type.cpp
+source world.cpp               worldmap.cpp
+// leveleditor.cpp
+MACRO NOOPENGL
+MACRO RES320X240
+
+EPOCSTACKSIZE 81900
+EPOCHEAPSIZE 10000000  32768000  
+
+
+STATICLIBRARY esdl.lib sdl_mixer.lib zlib.lib sdl_image.lib lpng.lib stlport_s.lib
+// *** Dynamic Libraries
+LIBRARY cone.lib  eikcore.lib 
+LIBRARY euser.lib apparc.lib fbscli.lib  
+LIBRARY apgrfx.lib
+LIBRARY gdi.lib hal.lib bitgdi.lib
+LIBRARY mediaclientaudiostream.lib efsrv.lib ws32.lib
+LIBRARY libc.lib bafl.lib libpthread.lib libm.lib
+LIBRARY estlib.lib qikcore.lib
+
+MACRO UIQ3
+
+UID                             0x100039ce 0xA000A003
+
+sourcepath .
+START RESOURCE  SuperTux.rss 
+HEADER
+TARGETPATH              \Resource\Apps
+LANG                    SC
+END
+
+START RESOURCE  SuperTux_reg.rss
+TARGETPATH              \private\10003a3f\apps
+END
+
+
+CAPABILITY LocalServices 
+
+START BITMAP    SuperTux.mbm
+HEADER
+TARGETPATH              \Resource\Apps
+SOURCEPATH              .
+// Source Color-depth Source-bitmap-list
+// c denotes whether the bitmap is a colour bitmap and the digits represent the
+// colour-depth of the bitmap and the bitmap mask respectively
+SOURCE  c24             SuperTuxS.bmp
+SOURCE  8               SuperTuxSM.bmp
+SOURCE  c24             SuperTuxL.bmp
+SOURCE  8               SuperTuxLM.bmp
+SOURCE  c24             SuperTuxXL.bmp
+SOURCE  8               SuperTuxXLM.bmp
+END

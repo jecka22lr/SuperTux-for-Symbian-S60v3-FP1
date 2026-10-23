@@ -1,0 +1,10 @@
+# built packages: publish these as GitHub release downloads, not in the repo
+*.sis
+*.sisx
+# signing keys: never commit
+*.key
+*.cer
+# build logs and Symbian build leftovers
+build_log.txt
+build_libs_log.txt
+ABLD.BAT

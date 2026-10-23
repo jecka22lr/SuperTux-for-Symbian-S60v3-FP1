@@ -1,0 +1,9 @@
+PRJ_PLATFORMS
+ARMV5 GCCE
+
+PRJ_EXPORTS
+..\png.h     \epoc32\include\libpng\png.h
+..\pngconf.h \epoc32\include\libpng\pngconf.h
+
+PRJ_MMPFILES
+lpng.mmp

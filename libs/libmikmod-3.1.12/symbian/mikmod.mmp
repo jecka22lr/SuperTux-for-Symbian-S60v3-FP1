@@ -1,0 +1,22 @@
+// libmikmod 3.1.12 as a static library, for SDL_mixer's MOD/XM music
+TARGET        mikmod.lib
+TARGETTYPE    lib
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis
+USERINCLUDE   . ..\include
+SYSTEMINCLUDE ..\include
+
+MACRO HAVE_CONFIG_H
+
+SOURCEPATH ..\drivers
+SOURCE drv_nos.c
+
+SOURCEPATH ..\loaders
+SOURCE load_669.c load_amf.c load_dsm.c load_far.c load_gdm.c load_imf.c load_it.c load_m15.c load_med.c load_mod.c load_mtm.c load_okt.c load_s3m.c load_stm.c load_stx.c load_ult.c load_uni.c load_xm.c 
+
+SOURCEPATH ..\mmio
+SOURCE mmalloc.c mmerror.c mmio.c
+
+SOURCEPATH ..\playercode
+SOURCE mdreg.c mdriver.c mdulaw.c mloader.c mlreg.c mlutil.c mplayer.c munitrk.c mwav.c npertab.c sloader.c virtch.c virtch2.c virtch_common.c
+// virtch_common.c is also #included by virtch.c/virtch2.c, but compiled alone it provides the VC_ functions

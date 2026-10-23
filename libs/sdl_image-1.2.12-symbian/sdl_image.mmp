@@ -1,0 +1,14 @@
+// SDL_image 1.2.12 as a static library, PNG + BMP + XPM only
+TARGET        sdl_image.lib
+TARGETTYPE    lib
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis \epoc32\include\esdl \epoc32\include\libpng
+USERINCLUDE   ..
+
+MACRO         LOAD_PNG
+MACRO         LOAD_BMP
+MACRO         LOAD_XPM
+
+SOURCEPATH    ..
+SOURCE IMG.c IMG_bmp.c IMG_gif.c IMG_jpg.c IMG_lbm.c IMG_pcx.c IMG_png.c
+SOURCE IMG_pnm.c IMG_tga.c IMG_tif.c IMG_webp.c IMG_xcf.c IMG_xpm.c IMG_xv.c

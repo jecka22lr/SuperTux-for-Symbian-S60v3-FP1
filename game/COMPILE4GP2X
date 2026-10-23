@@ -1,0 +1,11 @@
+I use this command to configure it for the gp2x cross compiler
+
+./cross-configure.sh --enable-320x240 --enable-gp2x --enable-static --disable-opengl
+
+and then
+
+./cross-make.sh
+
+and
+
+./cross-strip.sh

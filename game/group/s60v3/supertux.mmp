@@ -1,0 +1,50 @@
+target supertux.exe
+targettype exe
+targetpath \sys\bin
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis \epoc32\include\stdapis\stlport \epoc32\include\esdl \epoc32\include\libc
+userinclude ..\..\src
+sourcepath ..\..\src
+source badguy.cpp              bitmask.cpp             button.cpp              collision.cpp           configfile.cpp
+source gameloop.cpp            gameobjs.cpp            globals.cpp             high_scores.cpp         intro.cpp
+source level.cpp               lispreader.cpp          menu.cpp                mousecursor.cpp
+source musicref.cpp            music_manager.cpp       particlesystem.cpp      physic.cpp              player.cpp
+source resources.cpp           scene.cpp               screen.cpp              setup.cpp               sound.cpp
+source special.cpp             sprite.cpp              sprite_manager.cpp      supertux.cpp            text.cpp
+source texture.cpp             tile.cpp                timer.cpp               title.cpp               type.cpp
+source world.cpp               worldmap.cpp
+//  leveleditor.cpp         
+
+MACRO NOOPENGL
+// MACRO SKIP_AUDIO
+MACRO RES320X240
+
+EPOCSTACKSIZE 81900
+EPOCHEAPSIZE 10000000  32768000  
+
+
+STATICLIBRARY sdlmain.lib sdl_mixer.lib mikmod.lib sdl_image.lib lpng.lib
+
+LIBRARY       sdl.lib sdlexe.lib libstdcpp.lib libc.lib libm.lib libpthread.lib libz.lib
+LIBRARY       cone.lib eikcore.lib euser.lib apparc.lib fbscli.lib
+LIBRARY       apgrfx.lib gdi.lib hal.lib bitgdi.lib
+LIBRARY       mediaclientaudiostream.lib efsrv.lib ws32.lib avkon.lib bafl.lib
+LIBRARY       estlib.lib
+
+MACRO S60V3
+
+UID                             0x100039ce 0xA000A003
+
+sourcepath .
+START RESOURCE  SuperTux.rss 
+HEADER
+TARGETPATH              \Resource\Apps
+LANG                    SC
+END
+
+START RESOURCE  SuperTux_reg.rss
+TARGETPATH              \private\10003a3f\apps
+END
+
+
+CAPABILITY LocalServices 

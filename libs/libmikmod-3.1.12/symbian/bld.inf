@@ -1,0 +1,8 @@
+PRJ_PLATFORMS
+GCCE
+
+PRJ_EXPORTS
+..\include\mikmod.h \epoc32\include\mikmod\mikmod.h
+
+PRJ_MMPFILES
+mikmod.mmp

@@ -1,0 +1,14 @@
+// SDL_mixer 1.2.12 as a static library: WAV/AIFF/VOC sounds, WAV and MOD/XM (libmikmod) music
+TARGET        sdl_mixer.lib
+TARGETTYPE    lib
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\stdapis \epoc32\include\esdl \epoc32\include\mikmod
+USERINCLUDE   ..
+
+MACRO         WAV_MUSIC
+MACRO         MOD_MUSIC
+
+SOURCEPATH    ..
+SOURCE mixer.c music.c effect_position.c effect_stereoreverse.c effects_internal.c
+SOURCE load_aiff.c load_voc.c wavestream.c
+SOURCE music_mod.c dynamic_mod.c
